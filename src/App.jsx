@@ -75,9 +75,8 @@ export default function Portfolio() {
                         {["about", "skills", "projects", "experience", "contact"].map((id) => (
                             <li
                                 key={id}
-                                className={`cursor-pointer hover:text-indigo-300 ${
-                                    activeSection === id ? "text-indigo-400" : "text-white"
-                                }`}
+                                className={`cursor-pointer hover:text-indigo-300 ${activeSection === id ? "text-indigo-400" : "text-white"
+                                    }`}
                                 onClick={() => scrollToSection(id)}
                             >
                                 {id.charAt(0).toUpperCase() + id.slice(1)}
@@ -107,7 +106,6 @@ export default function Portfolio() {
                     )}
                 </nav>
 
-                {/* About section with updated email */}
                 <section id="about" className="pt-32 pb-24 text-center scroll-mt-20">
                     <img
                         src="/profile.png"
@@ -123,7 +121,18 @@ export default function Portfolio() {
                         Santhosh Kumar K
                     </motion.h1>
                     <p className="mt-4 text-base sm:text-lg text-gray-400">SDET | QA Automation Engineer</p>
-                    <motion.div className="mt-6 flex justify-center gap-6 text-2xl text-white" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.5 }}>
+
+                    {/* 🆕 Mission Statement Added Here */}
+                    <p className="mt-4 max-w-2xl mx-auto text-gray-300 text-sm sm:text-base leading-relaxed">
+                        I love breaking things (with code) and fixing them smarter. I build test automation that’s fast, reliable, and a little bit AI-powered.
+                    </p>
+
+                    <motion.div
+                        className="mt-6 flex justify-center gap-6 text-2xl text-white"
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ delay: 0.5 }}
+                    >
                         <a href="https://www.linkedin.com/in/santhoshkumark18/" target="_blank" rel="noreferrer" className="hover:text-indigo-300">
                             <FaLinkedin />
                         </a>
@@ -141,6 +150,7 @@ export default function Portfolio() {
                         </a>
                     </motion.div>
                 </section>
+
 
                 {/* Skills Section */}
                 <section id="skills" className="py-16 max-w-5xl mx-auto">
